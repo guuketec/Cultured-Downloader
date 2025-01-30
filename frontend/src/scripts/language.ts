@@ -3,9 +3,11 @@ let cachedLang: string = "";
 
 export const EN = "en";
 export const JP = "ja";
+export const ZH_TW = "zh-TW";
 export const LANGUAGES = [
     { value: EN, name: "English" },
     { value: JP, name: "日本語" },
+    { value: ZH_TW, name: "繁體中文" },
 ]
 
 export const translateText = (text: string, lang: string = "", fallback: string = ""): Promise<string> => {
@@ -31,6 +33,8 @@ export const GetLocale = (): string => {
     switch (cachedLang) {
     case JP:
         return "ja-JP";
+    case ZH_TW:
+        return "zh-TW";
     default:
         return "en-US";
     }
